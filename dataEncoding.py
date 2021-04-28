@@ -4,9 +4,10 @@ def plot_initializer(xli: int):
     plt.figure(figsize=(10, 4))
     plt.xlim((0, xli))
     plt.ylim((0,1))
-    plt.yticks([0.25,0.75],["0","1"])
+    plt.yticks([0.25, 0.50, 0.75],["-v","0", "+v"])
+    plt.xticks([xli//2], [" "])
     for i in range(xli):
-        plt.plot([i+1, i+1], [-1, 16], color="lightgrey", linestyle="dashed")
+        plt.plot([i+1, i+1], [-1, xli], color="lightgrey", linestyle="dashed")
     plt.plot([0, xli], [0.25, 0.25], color="lightgrey", linestyle="dotted")
     plt.plot([0, xli], [0.5, 0.5], color="lightgrey", linestyle="dashed")
     plt.plot([0, xli], [0.75, 0.75], color="lightgrey", linestyle="dotted")
@@ -114,11 +115,10 @@ def Diff_Manchester(data: list):
 
 if __name__ == '__main__':
     
-    bit_data = [0, 1, 1,0, 0, 1, 1,0, 1, 0, 1 ,0,1, 0, 1 ,0, 1,0, 0, 1, 1,0, 1, 0, 1 ,0,1, 0]
+    bit_data = [0, 1, 1,0, 0, 1, 1,0,1, 1 ,1, 1,0, 0, 1, 1,0, 1, 0, 1]
 
     NRZ_I(bit_data)
     NRZ_L(bit_data)
     Bipolar_AMI(bit_data)
     Manchester(bit_data)
     Diff_Manchester(bit_data)
-    print('done')
