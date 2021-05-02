@@ -27,6 +27,7 @@ def NRZ_L(data: list):
             else:
                 plt.plot([i,i,i+1],[0.25,0.75,0.75],color="lightgreen", linewidth=9)
         plt.text(round((i+(i+1))/2, 2),0.15, s=str(data[i]), color="lightgreen")
+    plt.savefig("NRZ-L.png", dpi=1000)
     plt.show()
 
 
@@ -48,6 +49,7 @@ def NRZ_I(data: list):
                 plt.plot([i,i,i+1],[j,j-0.50,j-0.50], color="purple", linewidth=9)
                 j= j-0.50
         plt.text(round((i+(i+1))/2, 2),0.15, s=str(data[i]), color="purple")
+    plt.savefig("NRZ-I.png", dpi=1000)
     plt.show()
         
 
@@ -67,6 +69,7 @@ def Bipolar_AMI(data: list):
             else:
                 plt.plot([i,i, i+1, i+1], [0.5,0.75,0.75,0.5], color="orange", linewidth=9)
         plt.text(round((i+(i+1))/2, 2),0.15, s=str(data[i]), color="orange")
+    plt.savefig("Bipolar_AMI.png", dpi=1000)
     plt.show()
 
 
@@ -83,6 +86,7 @@ def Manchester(data: list):
         if data[i] == data[i-1] and i>0:
                 plt.plot([i,i], [0.75,0.25], color="brown", linewidth=9)
         plt.text(round((i+(i+1))/2, 2),0.15, s=str(data[i]), color="brown")
+    plt.savefig("Manchester.png", dpi=1000)
     plt.show()
 
 
@@ -108,6 +112,7 @@ def Diff_Manchester(data: list):
                 plt.plot([i,mid_x,mid_x, i+1], [stop,stop, stop+0.50,stop+0.50], color="magenta", linewidth=9)
                 stop += 0.50
         plt.text(round((i+(i+1))/2, 2),0.15, s=str(data[i]), color="magenta")
+    plt.savefig("differential-Manchester.png", dpi=1000)
     plt.show()
 
 
