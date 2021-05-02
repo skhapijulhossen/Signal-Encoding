@@ -5,7 +5,10 @@ def Sn():
     ""
     global n  
     plt.figure(figsize=(6,4))
+    plt.title("Square wave using some of Sinusoids")
     plt.plot([0,1],[0,0], color="grey",linewidth=3)
+    plt.ylabel("Volts")
+    plt.xlabel(" t ")
 
     t = np.linspace(0,1,100)
     y = np.zeros(100)
